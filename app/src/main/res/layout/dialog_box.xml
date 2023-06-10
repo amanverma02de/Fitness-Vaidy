@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintCircleRadius="40dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="22dp"
+       >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DAAF2C"
+        android:padding="17dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:background="@color/design_default_color_error">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            app:srcCompat="@drawable/craiyon_222906_doctor_consultancy_app_ayurvedic" />
+        </LinearLayout>
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:text="@string/important_instructions_for_use"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/_1_this_app_is_intended_for_genuine_use_only_n_2_please_upload_clear_and_correct_image_n_3_be_patient_doctor_will_call_you_soon_n_4_multiple_enteries_won_t_increase_chances_of_early_response_n_5_change_mobile_number_if_you_haven_t_shared_correct_one_while_registration_n_6_if_any_problem_occurs_please_report_at_amanverma87790_gmail_com"
+            android:textColor="@color/black"
+           />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

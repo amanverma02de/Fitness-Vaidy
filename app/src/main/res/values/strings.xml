@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Vaidy</string>
+    <string name="sign_in">Sign in</string>
+    <string name="password">Password</string>
+    <string name="_1_this_app_is_intended_for_genuine_use_only_n_2_please_upload_clear_and_correct_image_n_3_be_patient_doctor_will_call_you_soon_n_4_multiple_enteries_won_t_increase_chances_of_early_response_n_5_change_mobile_number_if_you_haven_t_shared_correct_one_while_registration_n_6_if_any_problem_occurs_please_report_at_amanverma87790_gmail_com"> 1. This app is intended for genuine use only \n 2. Please Upload Clear and Correct image \n 3. Be Patient Doctor will call you soon. \n 4. Multiple Enteries won\'t increase chances of   early response \n 5. Change mobile number if you haven\'t shared correct one while registration \n 6. If any problem occurs please report at amanverma87790@gmail.com</string>
+    <string name="important_instructions_for_use">Important Instructions for use</string>
+    <string name="doctor_will_call_you_n_on_your_registered_mobile_number_n_please_reset_before_uploading_again">DOCTOR WILL CALL YOU \n ON YOUR REGISTERED MOBILE NUMBER\n PLEASE RESET BEFORE UPLOADING AGAIN</string>
+    <string name="search">Search</string>
+</resources>

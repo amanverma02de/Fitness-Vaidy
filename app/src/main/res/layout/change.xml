@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="38dp"
+        app:cardBackgroundColor="#DCCB3C">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="97dp"
+            app:srcCompat="@drawable/craiyon_222906_doctor_consultancy_app_ayurvedic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="OLD NUMBER"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/et_oldnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fetching"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="ENTER NEW NUMBER"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+        <EditText
+            android:id="@+id/et_newnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="numberSigned"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.070"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_username"
+            app:layout_constraintVertical_bias="0.129"
+            android:layout_gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
