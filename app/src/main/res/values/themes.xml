@@ -11,6 +11,13 @@
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@android:color/holo_red_light</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">#C6FF00</item>
+        <!-- Add more attributes as per your requirements -->
+    </style>
+
 </resources>

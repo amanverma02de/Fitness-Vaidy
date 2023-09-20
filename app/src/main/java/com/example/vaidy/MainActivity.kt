@@ -21,6 +21,7 @@ import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.example.vaidy.databinding.ActivityMainBinding
+import com.example.vaidy.databinding.CommentBinding
 import com.example.vaidy.databinding.DialogBoxBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -38,6 +39,7 @@ import kotlin.properties.Delegates
 class MainActivity : AppCompatActivity(), PaymentResultListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var binding2: DialogBoxBinding
+    private lateinit var binding3: CommentBinding
     private val userID = FirebaseAuth.getInstance().currentUser!!.uid
     private lateinit var ImageUri: Uri
     private var ImageUria: Uri? = null;
@@ -52,6 +54,7 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
     private var m by Delegates.notNull<Int>()
     private var storageRef = Firebase.storage
     private var n = 0;
+    lateinit var comment:String
     private var k = 0
     private var calendar: Calendar = Calendar.getInstance()
     private var simle = SimpleDateFormat("dd-MM-yyyy")
@@ -66,7 +69,6 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         setContentView(binding.root)
         val dialog = Dialog(this)
         binding.progressBar2.isInvisible = true
-        binding.imageButton4.isInvisible = true
         requestPermissions(arrayOf("android.permission.READ_EXTERNAL_STORAGE"), 80)
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         var progressDialog = ProgressDialog(this)
@@ -137,10 +139,10 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
                 Toast.makeText(applicationContext, "Upload All Photos", Toast.LENGTH_SHORT).show()
 
         }
-        binding.button3.setOnClickListener {
+       binding.button3.setOnClickListener {
             dialog.setContentView(R.layout.change)
             val m = dialog.findViewById<EditText>(R.id.et_newnum)
-            val btn = dialog.findViewById<Button>(R.id.btn_submit)
+            val btn1 = dialog.findViewById<Button>(R.id.btn_submit)
             val n = dialog.findViewById<TextView>(R.id.et_oldnum)
             val databaseReference =
                 FirebaseDatabase.getInstance("https://vaidy-40e9b-default-rtdb.asia-southeast1.firebasedatabase.app/")
@@ -150,7 +152,7 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
                     val old = it.child("0").value
                     dialog.show()
                     n.text = old.toString()
-                    btn.setOnClickListener {
+                    btn1.setOnClickListener {
                         if (m.toString().isNotEmpty() && (m.length()) == 10) {
                             databaseReference.child(userID).child("0").setValue(m.text.toString())
                                 .addOnSuccessListener {
@@ -165,22 +167,33 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
                             Toast.makeText(this, "Check Number", Toast.LENGTH_SHORT).show()
                         }
                     }
+                    dialog.findViewById<Button>(R.id.btn_okay).setOnClickListener {
+                        dialog.dismiss()
+                    }
                 }
             }
-
+       }
+        binding.button3.setOnClickListener {
+            binding3 = CommentBinding.inflate(LayoutInflater.from(this))
+            dialog.setContentView(binding3.root)
+           comment= binding3.btnOkay.toString()
+            dialog.show()
+            binding3.btnClose.setOnClickListener {
+                dialog.hide()
+            }
+            binding3.btnOkay.setOnClickListener {
+                dialog.hide()
+            }
         }
-        binding.imageButton.setOnClickListener {
+       binding.imageButton.setOnClickListener {
             binding2 = DialogBoxBinding.inflate(LayoutInflater.from(this))
             dialog.setContentView(binding2.root)
             dialog.show()
+           binding2.btnOkay.setOnClickListener {
+               dialog.hide()
+           }
+        }
 
-        }
-        binding.imageButton4.setOnClickListener {
-            finish();
-            overridePendingTransition(0, 0);
-            startActivity(getIntent());
-            overridePendingTransition(0, 0);
-        }
     }
 
     private fun paymentNow(amt: String) {
@@ -248,7 +261,14 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
                     val sdialog = Dialog(this)
                     sdialog.setContentView(R.layout.dialogn)
                     sdialog.show()
-                    binding.imageButton4.isVisible = true
+                    sdialog.findViewById<Button>(R.id.btn_okay).setOnClickListener {
+                        sdialog.hide()
+                        finish();
+                        overridePendingTransition(0, 0);
+                        startActivity(getIntent());
+                        overridePendingTransition(0, 0);
+                    }
+                    //binding.imageButton4.isVisible = true
                 }
 
 

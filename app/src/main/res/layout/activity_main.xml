@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:id="@+id/drawer"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="46.5dp"
-        android:text="Pay and Upload"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/design_default_color_error"
+        android:elevation="4dp"
+        android:theme="@style/CheckoutTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
-
-    <Button
-        android:id="@+id/button3"
+        app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
+        app:title="Fitness Vaidhy"
+    />
+    <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change \nMobile Number"
-        android:textSize="11.8dp"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.122"
+        app:srcCompat="@android:drawable/ic_menu_help" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload Your Images \nas Sample Shown"
-        android:textAlignment="center"
-        android:textSize="20dp"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="21dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <TextView
         android:id="@+id/textView4"
@@ -57,18 +64,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.883" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_error"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+
 
     <ProgressBar
         android:id="@+id/progressBar2"
@@ -82,19 +78,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45" />
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="42sp"
-        android:layout_height="42sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035"
-        app:srcCompat="@drawable/icons8_reset_64" />
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -103,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.300">
+        app:layout_constraintVertical_bias="0.382">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -115,13 +101,13 @@
                 android:layout_width="156dp"
                 android:layout_height="120dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.525"
-                android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/craiyon_223411_doctor_physiotherapy_app_for_youth" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -129,8 +115,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:clickable="true"
                 android:layout_marginEnd="5dp"
+                android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.256"
@@ -149,15 +135,15 @@
                 android:id="@+id/imageView3"
                 android:layout_width="156dp"
                 android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.91"
-                android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.525"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/craiyon_222906_doctor_consultancy_app_ayurvedic" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -165,12 +151,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="5dp"
                 android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.78"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginEnd="5dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.69"
                 app:srcCompat="@android:drawable/ic_input_add" />
@@ -185,13 +171,13 @@
                 android:id="@+id/imageView2"
                 android:layout_width="156dp"
                 android:layout_height="122dp"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.156"
-                android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/craiyon_222906_doctor_consultancy_app_ayurvedic" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -219,14 +205,14 @@
                 android:id="@+id/imageView4"
                 android:layout_width="156dp"
                 android:layout_height="122dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.91"
-                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.156"
-                android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/craiyon_223411_doctor_physiotherapy_app_for_youth" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -234,9 +220,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
                 android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginStart="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.78"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,4 +232,51 @@
         </LinearLayout>
     </GridLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765">
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pay Fee \nand Upload"
+            android:textSize="15dp"/>
+
+        <Space
+            android:layout_width="25dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ADD COMMENT"
+            android:textSize="15dp"/>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/navidea"
+        android:fitsSystemWindows="true"/>
+</androidx.drawerlayout.widget.DrawerLayout>

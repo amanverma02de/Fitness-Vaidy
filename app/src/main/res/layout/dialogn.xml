@@ -15,28 +15,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CDC4EF"
+        android:background="#D8D5E3"
         android:orientation="vertical"
-        android:padding="20dp">
+        >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:background="@color/design_default_color_error"
-            android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="98dp"
-            app:srcCompat="@drawable/craiyon_222906_doctor_consultancy_app_ayurvedic" />
+            android:orientation="vertical"
+            >
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="140dp"
+                android:layout_height="125dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/craiyon_222906_doctor_consultancy_app_ayurvedic" />
+
+
         </LinearLayout>
+
+
+
             <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="19sp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:text="@string/doctor_will_call_you_n_on_your_registered_mobile_number_n_please_reset_before_uploading_again"
+                android:padding="8dp"
+                android:text="SUCCESS...."
             android:textAlignment="center"
             android:textColor="@color/black"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="Doctor will call you on your registered \nmobile number. \nPlease reset before uploading again"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginBottom="15dp"
+            />
+        <Button
+            android:id="@+id/btn_okay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Okay"
+            android:layout_marginBottom="14dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+
 
     </LinearLayout>
     </androidx.cardview.widget.CardView>

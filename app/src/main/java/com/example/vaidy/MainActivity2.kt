@@ -1,6 +1,7 @@
 package com.example.vaidy
 
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Build
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.format.DateFormat
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -17,6 +19,8 @@ import androidx.core.view.isEmpty
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vaidy.databinding.ActivityMain2Binding
+import com.example.vaidy.databinding.DialogBoxBinding
+import com.example.vaidy.databinding.ErroBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.TaskCompletionSource
@@ -29,11 +33,13 @@ import java.util.Calendar
 class MainActivity2 : AppCompatActivity() {
     private lateinit var databaseReference:DatabaseReference
     private lateinit var binding3:ActivityMain2Binding
+    private lateinit var binding2: ErroBinding
     private lateinit var date:EditText
     private var recyclerV: RecyclerView? = null
     private var backPressedTime = 0L
     private lateinit var manager: RecyclerView.LayoutManager
     val arra =ArrayList<model>()
+    val dialog = Dialog(this)
     private lateinit var dat :String
     private lateinit var progressDialog:ProgressDialog
 
@@ -64,7 +70,6 @@ class MainActivity2 : AppCompatActivity() {
                  datePickerDialog.show()
 
                 }
-
 
         binding3.button4.setOnClickListener {
             if(date.text.isNotEmpty()) {
@@ -107,7 +112,16 @@ class MainActivity2 : AppCompatActivity() {
                         },15)
                     }
                 } else {
-                    Log.d("TAG", it.exception!!.message!!) //Never ignore potential errors!
+                binding2 = ErroBinding.inflate(LayoutInflater.from(this))
+                dialog.setContentView(binding2.root)
+                dialog.show()
+                binding2.btnOkay.setOnClickListener {
+                    dialog.hide()
+                    finish();
+                    overridePendingTransition(0, 0);
+                    startActivity(getIntent());
+                    overridePendingTransition(0, 0);
+                }
                 }
             binding3.imageButton4.visibility = View.VISIBLE
             progressDialog.hide()

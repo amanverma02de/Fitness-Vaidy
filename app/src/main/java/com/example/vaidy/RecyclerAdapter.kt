@@ -42,7 +42,7 @@ class RecyclerAdapter( val context: RecyclerView, private val arra:ArrayList<mod
                 databaseReference.child(arra[position].ui).get().addOnSuccessListener {
                 if (it.exists()) {
                     phn = it.child("0").value as String
-        val bundle= Bundle()
+                    val bundle= Bundle()
                     bundle.putString("UID",arra[position].ui)
                     bundle.putString("Phn",phn)
                     bundle.putString("Date",arra[position].date)
